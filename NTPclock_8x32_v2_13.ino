@@ -517,7 +517,7 @@ if ((ora >= night1) and (ora <= night2))
 else
    noinfo = 0;
 
-if ((ora == (night2-1)) and (minut = 55))  // force restart to clear buffers
+if ((ora == (night2-1)) and (minut == 55))  // force restart to clear buffers
 {
   if (secundar < 3)
   delay(5000);
