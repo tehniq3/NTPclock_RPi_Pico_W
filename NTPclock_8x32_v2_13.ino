@@ -16,7 +16,7 @@
  * v.2.10 - added HW watchdog as at https://github.com/tehniq3/HW_watchdog/
  * v.2.11 - removed long delays and used  small delays, millis(), while, etc
  * v.2.12 - replaced pwm with digitalWrite(pin, millis()%2), changed pin for display from GP14 in GP15, DST pin from GP12to GP14 + added internal led as seconds beat
- * v.2.13 - show wifi status with red light in upper-left side, show weather connexion status + force reset at 4:55 AM to clear the buffers
+ * v.2.13 - show wifi status with red light in upper-left side, show weather connexion status + prepared to force reset at 4:55 AM to clear the buffers (but not used)
 */
 
 #include <Adafruit_GFX.h>
