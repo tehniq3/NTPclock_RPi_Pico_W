@@ -19,3 +19,6 @@ base info:
 
  [schematic at high resolution](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh56DB4wEgFkC6Mk6DEbW50fXIGvPsbxp32qkwvkK8AJzmZmz0pPa7bM6Q4ONyuDsWP9rzm0YZc1Xn7c4hnq5AKq5gyX9Cfg1zIWp7JtMGAwDU-9kFGC_37PfdR3Gr8LTuLi1TjrdpzC2N5Ip8mbh7WCqA3Lw9-7dPIf6cpj8l2-PGmjDEOdwqL372oV41x/s1681/NTPclock_RPiPicoW_DST_8x32_schematic_v2a.png)
 
+3rd article: https://nicuflorica.blogspot.com/2023/10/ceas-ntp-cu-raspberry-pi-pico-w-pe_18.html
+
+![real3](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-hAh47gY4ub8bBSBJSfM0myBrXA3gN9dOiwc_8h9rORoXuhq0iyYK-LKjp4Nn9tm80VUCCH7sZRvFcei56kNrRmyQFQzzo1h6BSh3OE9MoCl5T0wLKd8k738jhrqEokxlGHzZ8eqJB2zryG-ZHYD-hfaOCfIpH-evT25jbhgx8SG-AASqPfgskLrHyMDm/w200-h150/NTP_RPIPicoW_10.jpg)
