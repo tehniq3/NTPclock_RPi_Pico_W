@@ -852,7 +852,7 @@ if (vremecon == 4)
 void Soare()
 {
    // Calculate the times of sunrise, transit, and sunset, in hours (UTC)
-  calcSunriseSunset(an, luna, zi, latitude, longitude, transit, sunrise, sunset);
+  calcSunriseSunset(an, luna, zi2, latitude, longitude, transit, sunrise, sunset);
 
 m1 = int(round((sunrise + timezoneOffset + DST) * 60));
 hr1 = (m1 / 60) % 24;
