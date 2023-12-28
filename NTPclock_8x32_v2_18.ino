@@ -23,6 +23,7 @@
  * v.2.17 - correct day variable (zi2 instead zi) for sunset/sunrise + cleand the sketch
  * v.2.18 - split request in 2 requests: hour / weather as at https://github.com/tehniq3/NTPclock_RP2040_ESP8266_01/blob/main/NTP_weatherstation_RP2040_ESP8266_i2c_1602_v3_6/NTP_weatherstation_RP2040_ESP8266_i2c_1602_v3_6.ino
             check hour/year at first check (after power on / reset), no ok, retry ans retry..
+ * v.2.18a - small changes at variables and timmings            
 */
 
 #include <Adafruit_GFX.h>
@@ -195,7 +196,7 @@ int oravr, minvr;
 unsigned long tppreluatvreme;
 unsigned long tpfortare = 6*3600000; // x hours without wether info 
 
-byte liber = 1;
+byte liber = 3;
 byte liber0 = 7;
 int an2  = 0;
 int zi00, zi20, luna0, an0;
@@ -262,8 +263,9 @@ matrix.fillScreen(0);
 
   timeClient.setTimeOffset((timezoneOffset + DST)*3600);
   timeClient.begin();
+  delay(3000);          
   updated = timeClient.update();
-  delay(1000);
+  //delay(1000);
   DST0 = DST; 
 
 if (an2 < 1971)
@@ -305,6 +307,7 @@ digitalWrite(initial, LOW);
     
 tpsoare = millis();
 tpvreme = millis();
+lastUpdatedTime = millis();            
 }
 
 void loop() {
@@ -364,13 +367,13 @@ void loop() {
       wificon = 1;
       Serial.println("Failed to update time. Waiting for retry...");
   //     lastUpdatedTime = millis();
-      lastUpdatedTime = millis() + retryDelay + 10000;
+      lastUpdatedTime = millis() + retryDelay;
    //   lastUpdatedTime = millis() - updateDelay + retryDelay + 3000;
       Serial.println(lastUpdatedTime);
       liber = 1;
-      Serial.println("+3s");
-      digitalWrite(piviem, millis()%2);
-      delay(500);
+      Serial.println("+10s");
+      digitalWrite(piviem, 128);
+      delay(1);
     }
   } else {
     if (WiFi.status() != WL_CONNECTED) //Serial.println("WiFi disconnected!");
@@ -379,7 +382,7 @@ void loop() {
     Serial.println("No wi-Fi connexion :(((");
     
     lastUpdatedTime = millis() - updateDelay + retryDelay;
-    digitalWrite(piviem, millis()%2);
+    digitalWrite(piviem, 128);
     }
   }
   }  // end   while "liber = 1"
