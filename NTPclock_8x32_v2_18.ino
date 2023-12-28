@@ -301,7 +301,7 @@ if (dn == 0)
       }
     matrix.show();
 
-analogWrite(piviem, 128);
+analogWrite(piviem, millis()%2);
 delay(1000);
 digitalWrite(initial, LOW);
     
@@ -372,7 +372,7 @@ void loop() {
       Serial.println(lastUpdatedTime);
       liber = 1;
       Serial.println("+10s");
-      digitalWrite(piviem, 128);
+      digitalWrite(piviem, millis()%2);
       delay(1);
     }
   } else {
@@ -382,7 +382,7 @@ void loop() {
     Serial.println("No wi-Fi connexion :(((");
     
     lastUpdatedTime = millis() - updateDelay + retryDelay;
-    digitalWrite(piviem, 128);
+    digitalWrite(piviem, millis()%2);
     }
   }
   }  // end   while "liber = 1"
