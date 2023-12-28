@@ -268,7 +268,7 @@ matrix.fillScreen(0);
   //delay(1000);
   DST0 = DST; 
 
-if (an2 < 1971)
+while (an2 < 1971)
 {
 ora = timeClient.getHours();
 minut = timeClient.getMinutes();
@@ -279,7 +279,7 @@ getDay();
 zi = timeClient.getDay(); 
 
 matrix.setPixelColor(127, 150, 150, 0);  // pixel, red, green, blue level (0..255)
-delay(3000);
+delay(1000);
 matrix.setPixelColor(127, 0, 150, 0);  // pixel, red, green, blue level (0..255)
 delay(500);
 matrix.show();
