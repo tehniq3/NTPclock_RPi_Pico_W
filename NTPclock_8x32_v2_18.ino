@@ -263,13 +263,12 @@ matrix.fillScreen(0);
 
   timeClient.setTimeOffset((timezoneOffset + DST)*3600);
   timeClient.begin();
-  delay(3000);          
+  delay(3000);  
+  while (an2 < 1971)
+{          
   updated = timeClient.update();
-  //delay(1000);
-  DST0 = DST; 
-
-while (an2 < 1971)
-{
+  delay(1000);
+  DST0 = DST;
 ora = timeClient.getHours();
 minut = timeClient.getMinutes();
 secundar = timeClient.getSeconds();
@@ -283,7 +282,7 @@ delay(1000);
 matrix.setPixelColor(127, 0, 150, 0);  // pixel, red, green, blue level (0..255)
 delay(500);
 matrix.show();
-}
+   }
 delay(1000); // wait
 getWeatherData();
 Soare();
