@@ -23,7 +23,8 @@
  * v.2.17 - correct day variable (zi2 instead zi) for sunset/sunrise + cleand the sketch
  * v.2.18 - split request in 2 requests: hour / weather as at https://github.com/tehniq3/NTPclock_RP2040_ESP8266_01/blob/main/NTP_weatherstation_RP2040_ESP8266_i2c_1602_v3_6/NTP_weatherstation_RP2040_ESP8266_i2c_1602_v3_6.ino
             check hour/year at first check (after power on / reset), no ok, retry ans retry..
- * v.2.18a - small changes at variables and timmings            
+ * v.2.18a - small changes at variables and timmings
+ * v.2.18b - replase main WHILE with IF
 */
 
 #include <Adafruit_GFX.h>
@@ -315,7 +316,7 @@ void loop() {
   else
    DST = 1;
 
-  while (liber == 1) 
+  if (liber == 1) 
   { 
 //  if (WiFi.status() == WL_CONNECTED && millis() - lastUpdatedTime >= updateDelay) 
   if (WiFi.status() == WL_CONNECTED)
@@ -384,9 +385,9 @@ void loop() {
     digitalWrite(piviem, millis()%2);
     }
   }
-  }  // end   while "liber = 1"
+  }  // end "liber = 1"
 
-while (liber == 2)
+if (liber == 2)
 {  
 //if (millis() - tpvreme >= tpinterogare1)
 //{
@@ -402,7 +403,7 @@ if (millis() - tppreluatvreme > tpfortare)  // x hours without weather info
  vremecon = 4;  // show too long time no info
 }
 liber = 3;
-}  // end   while "liber = 2"
+}  // end "liber = 2"
 
 if (millis() - tpceas >= tpinterogare0)
 {
