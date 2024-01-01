@@ -343,9 +343,9 @@ void loop() {
       {
         //int zi00, zi20, luna0, an0;
         unixora0 = unixora;
-        zi = zi00;
-        zi2 =zi20;
-        luna0 - luna;
+        zi00 = zi;
+        zi20 =zi2;
+        luna0 = luna;
         an0 = an;        
       }
       
