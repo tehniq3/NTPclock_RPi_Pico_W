@@ -29,6 +29,7 @@
  * v.2.19a - solved day of week issue
  * v.2.19b - not force reconnect to wifi
  * v.2.19c - solved issue with negative temperature
+* v.2.19c1 - reinitiated the String result for weather each time
 */
 
 #include <Adafruit_GFX.h>
@@ -111,7 +112,7 @@ const unsigned long retryDelay  = 60000;         // retry 5 min later if time qu
 //weather variables
 WiFiClient client;
 char servername[]="api.openweathermap.org";              // remote weather server we will connect to
-String result;
+//String result;
 String APIKEY = "ca55295c4a4b9a681dce2688e0751dde"; // https://home.openweathermap.org/api_keys                            
 String CityID = "680332"; // Craiova city                       
 int  fetchweatherflag = 0; 
@@ -746,6 +747,7 @@ void getWeatherData()     //client function to send/receive GET request data.
   while(client.connected() && !client.available()) 
   // delay(1);  
   yield();//waits for data
+  String result;          
   while (client.connected() || client.available())    
        {                                             //connected or data available
          yield(); // https://stackoverflow.com/questions/75228952/soft-wdt-reset-on-esp8266-when-using-speed-sensor
